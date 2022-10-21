@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 55bc8df0f9143da49beaacdd2b2e5e4f
+guid: 26475c4ea5616ca458232fe92e36920d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1553773638956847297
-    second: hansel_idle_0
+      213: -1606123425113241278
+    second: hansel_idle 1_0
   - first:
-      213: -3861252220252990408
-    second: hansel_idle_1
+      213: -7078636178095023324
+    second: hansel_idle 1_1
   - first:
-      213: -1496874526902386788
-    second: hansel_idle_2
+      213: 2863896142109685539
+    second: hansel_idle 1_2
   - first:
-      213: -9166134984170917543
-    second: hansel_idle_3
+      213: 3171141206302988046
+    second: hansel_idle 1_3
   - first:
-      213: -5567316080139577655
-    second: hansel_idle_4
+      213: -6874857610283027376
+    second: hansel_idle 1_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -61,7 +61,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 512
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,16 +100,52 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hansel_idle_0
+      name: hansel_idle 1_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 133
         y: 0
-        width: 525
+        width: 260
         height: 628
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -118,19 +154,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c0936374ec109510800000000000000
-      internalID: 1553773638956847297
+      spriteID: 24901b42147e5b9e0800000000000000
+      internalID: -1606123425113241278
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hansel_idle_1
+      name: hansel_idle 1_1
       rect:
         serializedVersion: 2
-        x: 525
+        x: 657
         y: 0
-        width: 525
+        width: 260
         height: 628
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -139,19 +175,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 834d1af30931a6ac0800000000000000
-      internalID: -3861252220252990408
+      spriteID: 42bda6676e1a3cd90800000000000000
+      internalID: -7078636178095023324
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hansel_idle_2
+      name: hansel_idle 1_2
       rect:
         serializedVersion: 2
-        x: 1050
+        x: 1181
         y: 0
-        width: 525
+        width: 263
         height: 628
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -160,19 +196,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9ff6ae6c880a3be0800000000000000
-      internalID: -1496874526902386788
+      spriteID: 3273f002e5a9eb720800000000000000
+      internalID: 2863896142109685539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hansel_idle_3
+      name: hansel_idle 1_3
       rect:
         serializedVersion: 2
-        x: 1575
+        x: 1708
         y: 0
-        width: 525
+        width: 260
         height: 628
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -181,19 +217,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9513631dbc85bc080800000000000000
-      internalID: -9166134984170917543
+      spriteID: e071b4e2028220c20800000000000000
+      internalID: 3171141206302988046
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hansel_idle_4
+      name: hansel_idle 1_4
       rect:
         serializedVersion: 2
-        x: 2100
+        x: 2232
         y: 0
-        width: 525
+        width: 260
         height: 628
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -202,8 +238,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c6d5f2a58becb2b0800000000000000
-      internalID: -5567316080139577655
+      spriteID: 05470b19d699790a0800000000000000
+      internalID: -6874857610283027376
       vertices: []
       indices: 
       edges: []

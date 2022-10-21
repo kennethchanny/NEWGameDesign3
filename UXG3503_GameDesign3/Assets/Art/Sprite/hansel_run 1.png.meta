@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: c46b4567eb58ab6488eb6adcc13e1911
+guid: 60040e00b486f1746a1da3691fb36fb5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4715832004696861275
-    second: gretel_run_0
+      213: -3016977306258548029
+    second: hansel_run 1_0
   - first:
-      213: -572595106341214412
-    second: gretel_run_1
+      213: -1716282678482065864
+    second: hansel_run 1_1
   - first:
-      213: -3833766764279363815
-    second: gretel_run_2
+      213: -36785835728925361
+    second: hansel_run 1_2
   - first:
-      213: -8191965004525145338
-    second: gretel_run_3
+      213: 7394023944476647697
+    second: hansel_run 1_3
   - first:
-      213: 4759481391191600860
-    second: gretel_run_4
+      213: -6121274643401087248
+    second: hansel_run 1_4
   - first:
-      213: 2002838121500235775
-    second: gretel_run_5
+      213: -2230341845463959414
+    second: hansel_run 1_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -64,9 +64,9 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 512
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -103,16 +103,52 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gretel_run_0
+      name: hansel_run 1_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 127
         y: 0
-        width: 525
+        width: 272
         height: 628
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -121,19 +157,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5aef540930027140800000000000000
-      internalID: 4715832004696861275
+      spriteID: 3ca5b05ef1b8126d0800000000000000
+      internalID: -3016977306258548029
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gretel_run_1
+      name: hansel_run 1_1
       rect:
         serializedVersion: 2
-        x: 525
+        x: 659
         y: 0
-        width: 525
+        width: 260
         height: 628
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -142,19 +178,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 437a766d8cbbd08f0800000000000000
-      internalID: -572595106341214412
+      spriteID: 836abe64ff98e28e0800000000000000
+      internalID: -1716282678482065864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gretel_run_2
+      name: hansel_run 1_2
       rect:
         serializedVersion: 2
-        x: 1050
+        x: 1164
         y: 0
-        width: 525
+        width: 299
         height: 628
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -163,20 +199,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9170e67a079bbcac0800000000000000
-      internalID: -3833766764279363815
+      spriteID: f4d8c903a7f4d7ff0800000000000000
+      internalID: -36785835728925361
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gretel_run_3
+      name: hansel_run 1_3
       rect:
         serializedVersion: 2
-        x: 1575
-        y: 0
-        width: 525
-        height: 628
+        x: 1674
+        y: 59
+        width: 329
+        height: 497
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,19 +220,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 603f8d43b3b405e80800000000000000
-      internalID: -8191965004525145338
+      spriteID: 111634f2a99dc9660800000000000000
+      internalID: 7394023944476647697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gretel_run_4
+      name: hansel_run 1_4
       rect:
         serializedVersion: 2
-        x: 2100
+        x: 2203
         y: 0
-        width: 525
+        width: 320
         height: 628
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -205,19 +241,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdeae05cb131d0240800000000000000
-      internalID: 4759481391191600860
+      spriteID: 0f6e87bc42ddc0ba0800000000000000
+      internalID: -6121274643401087248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gretel_run_5
+      name: hansel_run 1_5
       rect:
         serializedVersion: 2
-        x: 2625
+        x: 2755
         y: 0
-        width: 525
+        width: 267
         height: 628
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -226,8 +262,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff7d1a6f8a28bcb10800000000000000
-      internalID: 2002838121500235775
+      spriteID: a887e6d88eb3c01e0800000000000000
+      internalID: -2230341845463959414
       vertices: []
       indices: 
       edges: []
