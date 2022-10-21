@@ -8,37 +8,53 @@ public class Swing : MonoBehaviour
     public int leverDirection = 0;
     public Transform rightrope;
     public Transform leftrope;
-    public int id = 1;
+    public GameObject player2ref;
+    public GameObject cageref;
 
-  
 
-    public void ToggleLever(int id)
+
+    public void TriggerLever(int id)
     {
-        if (id == this.id)
+        switch (id)
         {
-
-
-            switch (leverDirection)
-            {
-
-                case 0:
+            case 1:
+                {
+                    switch (leverDirection)
                     {
-                        leverDirection = 1;
-                    }
-                    break;
-                case 1:
-                    {
-                        leverDirection = -1;
-                    }
-                    break;
-                case -1:
-                    {
-                        leverDirection = 1;
-                    }
-                    break;
+
+                        case 0:
+                            {
+                                leverDirection = 1;
+                            }
+                            break;
+                        case 1:
+                            {
+                                leverDirection = -1;
+                            }
+                            break;
+                        case -1:
+                            {
+                                leverDirection = 1;
+                            }
+                            break;
 
 
-            }
+                    }
+                }
+                break;
+
+            case 2:
+                {
+                    if(player2ref.transform.parent != null)
+                    {
+                        cageref.GetComponent<BoxCollider2D>().enabled = false;
+                        player2ref.transform.parent = null;
+                    }
+
+                }
+                break;
+
+
         }
 
 
@@ -46,12 +62,12 @@ public class Swing : MonoBehaviour
 
     private void Start()
     {
-        EventManager.current.onLeverPulled += ToggleLever;
+        EventManager.current.onLeverPulled += TriggerLever;
     }
 
     private void OnDestroy()
     {
-        EventManager.current.onLeverPulled -= ToggleLever;
+        EventManager.current.onLeverPulled -= TriggerLever;
     }
     public void MoveCage(int dir)
     {

@@ -50,11 +50,22 @@ namespace TarodevController {
         {
             playerLock = false;
             EventManager.current.onGameOver += LockPlayer;
+            EventManager.current.onLeverPulled += UnlockGate;
+            
         }
 
         private void OnDestroy()
         {
             EventManager.current.onGameOver -= LockPlayer;
+            EventManager.current.onLeverPulled += UnlockGate;
+        }
+
+        private void UnlockGate(int id)
+        {
+            if(id == 2)
+            {
+                inCage = false;
+            }
         }
 
         private void LockPlayer()
