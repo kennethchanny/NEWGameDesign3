@@ -10,6 +10,8 @@ public class Swing : MonoBehaviour
     public Transform leftrope;
     public GameObject player2ref;
     public GameObject cageref;
+    public float maxX = 0;
+
 
 
 
@@ -49,6 +51,7 @@ public class Swing : MonoBehaviour
                     {
                         cageref.GetComponent<BoxCollider2D>().enabled = false;
                         player2ref.transform.parent = null;
+                        leverDirection = 0;
                     }
 
                 }
@@ -71,12 +74,21 @@ public class Swing : MonoBehaviour
     }
     public void MoveCage(int dir)
     {
-        rightrope.Translate(moveSpeed * dir, 0, 0);
-        leftrope.Translate(moveSpeed * dir, 0, 0);
+        
+            rightrope.Translate(moveSpeed * dir, 0, 0);
+            leftrope.Translate(moveSpeed * dir, 0, 0);
+        
+        
     }
     // Update is called once per frame
     void Update()
     {
+     
+        if (cageref.transform.localPosition.x > maxX)
+        {
+            
+            moveSpeed = 0;
+        }
     }
     private void FixedUpdate()
     {

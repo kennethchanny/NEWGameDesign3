@@ -55,4 +55,14 @@ public class EventManager : MonoBehaviour
         }
 
     }
+
+    public event Action onWitchDeath;
+    public void WitchDeath()
+    {
+        if (onWitchDeath != null)
+        {
+            onWitchDeath();
+        }
+
+    }
 }
