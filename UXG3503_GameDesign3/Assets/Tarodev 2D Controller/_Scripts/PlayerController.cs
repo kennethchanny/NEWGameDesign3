@@ -14,9 +14,9 @@ namespace TarodevController {
         private Vector3 velocity;
         public int playerNumber;
         public bool inCage;
-        [SerializeField] private CameraFollowTarget cameraFollowScript;
-        [SerializeField] private float slugReduction;
-        [SerializeField] private float maxslugValue;
+        public CameraFollowTarget cameraFollowScript;
+        public float slugReduction = 0;
+        public float maxslugValue;
 
 
         // Public for external hooks
@@ -50,11 +50,23 @@ namespace TarodevController {
         {
             playerLock = false;
             EventManager.current.onGameOver += LockPlayer;
+            EventManager.current.onLeverPulled += UnlockGate;
+            
         }
 
         private void OnDestroy()
         {
             EventManager.current.onGameOver -= LockPlayer;
+            EventManager.current.onLeverPulled += UnlockGate;
+        }
+
+        private void UnlockGate(int id)
+        {
+            if(id == 2)
+            {
+                inCage = false;
+                transform.rotation = Quaternion.identity;
+            }
         }
 
         private void LockPlayer()
