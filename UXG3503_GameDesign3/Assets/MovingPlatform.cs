@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
+    public float moveSpeed = 2;
     private bool istarget1 = true;
     public int id;
     public Transform target1;
@@ -38,7 +39,7 @@ public class MovingPlatform : MonoBehaviour
 
     void UpdateMovement(Vector3 point)
     {
-        var step = 2f * Time.deltaTime;
+        var step = moveSpeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, point, step);
 
         float distancebetween = Vector3.Distance(transform.position,point);
