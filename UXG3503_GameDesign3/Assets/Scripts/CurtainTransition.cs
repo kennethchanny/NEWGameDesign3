@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class CurtainTransition : MonoBehaviour
 {
     // Start is called before the first frame update
+    public bool isTutorial = false;
     private Animator animref;
     private InGameDialogue theshowgoon;
     public postprocess postprocessref;
@@ -16,6 +17,7 @@ public class CurtainTransition : MonoBehaviour
         animref = GetComponent<Animator>();
         theshowgoon = GameObject.Find("TheShowMustGoOn!").GetComponent<InGameDialogue>();
         EventManager.current.onGameOver += CurtainClose;
+        EventManager.current.onTutorialEnded += CurtainClose;
       
     }
 
@@ -23,6 +25,7 @@ public class CurtainTransition : MonoBehaviour
     private void OnDestroy()
     {
         EventManager.current.onGameOver -= CurtainClose;
+        EventManager.current.onTutorialEnded -= CurtainClose;
     }
 
     public void TurnOffPost()
@@ -46,7 +49,12 @@ public class CurtainTransition : MonoBehaviour
 
     public void RestartGame()
     {
+        if(!isTutorial)
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        else
+        {
+            SceneManager.LoadScene(2);
+        }
     }
     // Update is called once per frame
     void Update()

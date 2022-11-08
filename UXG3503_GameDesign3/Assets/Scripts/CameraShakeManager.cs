@@ -8,9 +8,9 @@ public class CameraShakeManager : MonoBehaviour
     //reference impulse source
     private CinemachineImpulseSource camerashakeSource;
     void Start()
-    { 
-        
+    {
 
+        Camera.main.transform.rotation = Quaternion.identity;
         //Subscribe to onCameraShakeTriggered Event
         EventManager.current.onCameraShakeTriggered += GenerateImpulse;
         //intialize impulse source

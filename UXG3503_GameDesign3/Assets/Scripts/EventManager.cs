@@ -46,6 +46,16 @@ public class EventManager : MonoBehaviour
 
     }
 
+    public event Action onTutorialEnded;
+    public void TutorialEndedTriggered()
+    {
+        if (onTutorialEnded != null)
+        {
+            onTutorialEnded();
+        }
+
+    }
+
     public event Action<int> onLeverPulled;
     public void LeverPulled(int id)
     {

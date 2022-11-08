@@ -8,6 +8,8 @@ public class CameraFollowTarget : MonoBehaviour
     public Transform playertransform1;
     public Transform playertransform2;
     public Transform camerafollowtarget;
+
+    public float yOffset;
     public float playerseparation;
     public float maxseparation;
 
@@ -23,7 +25,8 @@ public class CameraFollowTarget : MonoBehaviour
 
     void Start()
     {
-        camerafollowtarget.position = 0.5f*(playertransform1.position + playertransform2.position);
+        var initPos = 0.5f * (playertransform1.position + playertransform2.position);
+        camerafollowtarget.position = new Vector3(initPos.x, initPos.y + yOffset, initPos.z);
         ingamecamera = GameObject.Find("InGameCamera").GetComponent<CinemachineVirtualCamera>();
     }
 

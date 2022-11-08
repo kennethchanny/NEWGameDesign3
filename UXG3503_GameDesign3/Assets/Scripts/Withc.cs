@@ -5,7 +5,7 @@ using UnityEngine;
 public class Withc : MonoBehaviour
 {
     private Animator animRef;
-    public float countDown = 80f;
+    public float countDown = 150f;
     private bool phase1 = false;
     private bool phase2 = false;
     private bool phase3 = false;
@@ -28,19 +28,19 @@ public class Withc : MonoBehaviour
 
         countDown -= Time.deltaTime;
 
-        if(countDown <= 60f && phase1 == false)
+        if(countDown <= 120f && phase1 == false)
         {
             phase1 = true;
             Debug.Log("Phase1");
             animRef.SetTrigger("Phase1");
         }
-        if(countDown <= 40f && phase2 == false)
+        if(countDown <= 80f && phase2 == false)
         {
             phase2 = true;
             Debug.Log("Phase2");
             animRef.SetTrigger("Phase2");
         }
-        if (countDown <= 20f && phase3 == false)
+        if (countDown <= 40f && phase3 == false)
         {
             phase3 = true;
             Debug.Log("Phase3");
@@ -56,7 +56,7 @@ public class Withc : MonoBehaviour
 
     public void ResetCountDown()
     {
-        countDown = 60;
+        countDown = 150;
         animRef.SetTrigger("Rest");
     }
     // Update is called once per frame
