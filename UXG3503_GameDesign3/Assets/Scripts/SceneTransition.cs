@@ -8,13 +8,13 @@ public class SceneTransition : MonoBehaviour
 
     private Animator animRef;
     public AudioScript audioQuitRef;
-    public AudioScript audioPlayRef;
+    public GameObject sticksMovment;
+    public GameObject curtainClosing;
 
     private void Start()
     {
         animRef = GetComponent<Animator>();
         audioQuitRef = GetComponent<AudioScript>();
-        audioPlayRef = GetComponent<AudioScript>();
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
@@ -38,12 +38,12 @@ public class SceneTransition : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         animRef.SetTrigger("Transition");
+        sticksMovment.SetActive(true);
+        StartCoroutine(CloseCurtainAudio(1.3f));
         // puppet moving down the screen 2.5s
         // 6 sticks moving
-        audioPlayRef.playAudio3();
-        audioPlayRef.playAudio4();
         // @1.3s play curtain sounds
-        StartCoroutine(CloseCurtainAudio(1.3f));
+        //StartCoroutine(CloseCurtainAudio(1.3f));
         
     }
 
@@ -55,8 +55,9 @@ public class SceneTransition : MonoBehaviour
 
     IEnumerator CloseCurtainAudio(float waitTime)
     {
-        audioQuitRef.playAudio3();
+        
         yield return new WaitForSeconds(waitTime);
+        curtainClosing.SetActive(true);
     }
 
 
