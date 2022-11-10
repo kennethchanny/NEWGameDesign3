@@ -43,7 +43,7 @@ public class SceneTransition : MonoBehaviour
         audioPlayRef.playAudio3();
         audioPlayRef.playAudio4();
         // @1.3s play curtain sounds
-        StartCoroutine(CloseCurtainAudio(1.3));
+        StartCoroutine(CloseCurtainAudio(1.3f));
         
     }
 
