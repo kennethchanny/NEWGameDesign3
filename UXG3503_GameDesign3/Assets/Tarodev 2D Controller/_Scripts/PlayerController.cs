@@ -18,6 +18,8 @@ namespace TarodevController {
         public float slugReduction = 0;
         public float maxslugValue;
 
+        //public GameObject hansel;
+        public Rigidbody2D hans;
 
         // Public for external hooks
         public Vector3 GetVelocity()
@@ -51,7 +53,8 @@ namespace TarodevController {
             playerLock = false;
             EventManager.current.onGameOver += LockPlayer;
             EventManager.current.onLeverPulled += UnlockGate;
-            
+            hans = GetComponent<Rigidbody2D>();
+            hans.bodyType = RigidbodyType2D.Kinematic;
         }
 
         private void OnDestroy()
@@ -66,6 +69,11 @@ namespace TarodevController {
             {
                 inCage = false;
                 transform.rotation = Quaternion.identity;
+            }
+
+            if (inCage == false)
+            {
+                hans.bodyType = RigidbodyType2D.Dynamic;
             }
         }
 
@@ -374,4 +382,6 @@ namespace TarodevController {
 
         #endregion
     }
+
+   
 }
