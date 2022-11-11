@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameOver : MonoBehaviour
 {
@@ -36,6 +37,7 @@ public class GameOver : MonoBehaviour
                 deathdecaytimer = 0;
                 gameOver = true;
                 EventManager.current.GameOverTriggered();
+
             }
 
 
