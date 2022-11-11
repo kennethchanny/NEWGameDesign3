@@ -37,6 +37,23 @@ public class MovingPlatform : MonoBehaviour
        
     }
 
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.transform.SetParent(transform);
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.transform.SetParent(null);
+        }
+    }
+
     void UpdateMovement(Vector3 point)
     {
         var step = moveSpeed * Time.deltaTime;
@@ -53,4 +70,5 @@ public class MovingPlatform : MonoBehaviour
     {
         UpdateMovement(activetarget.position);
     }
+
 }

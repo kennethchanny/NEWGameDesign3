@@ -246,6 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7748e4817fe33c74f87f793dc8489b56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 2
   id: 3
   target1: {fileID: 1329546065233958495}
   target2: {fileID: 1329546065417778129}
