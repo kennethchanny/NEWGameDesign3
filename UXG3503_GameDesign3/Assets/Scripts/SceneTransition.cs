@@ -14,7 +14,6 @@ public class SceneTransition : MonoBehaviour
     private void Start()
     {
         animRef = GetComponent<Animator>();
-        audioQuitRef = GetComponent<AudioScript>();
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
@@ -27,8 +26,10 @@ public class SceneTransition : MonoBehaviour
 
     public void QuitGame()
     {
+       
         StartCoroutine(PostBtnAudio(4.0f));
         Application.Quit();
+
     }
 
     ///////////////////////Nicole added below
@@ -51,6 +52,7 @@ public class SceneTransition : MonoBehaviour
     {
         audioQuitRef.playAudio3();
         yield return new WaitForSeconds(waitTime);
+        
     }
 
     IEnumerator CloseCurtainAudio(float waitTime)
