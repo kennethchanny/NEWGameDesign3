@@ -9,9 +9,16 @@ public class AudioBGM : MonoBehaviour
 
     private void Awake()
     {
-        // Do not destroy audio track
-        DontDestroyOnLoad(transform.gameObject);
         AudioRef = GetComponent<AudioSource>();
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("music");
+        // Do not destroy audio track
+        if (objs.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+
+        DontDestroyOnLoad(this.gameObject);
+        
     }
 
     // Start is called before the first frame update
