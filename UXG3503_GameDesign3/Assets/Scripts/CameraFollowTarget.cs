@@ -13,7 +13,6 @@ public class CameraFollowTarget : MonoBehaviour
     public float playerseparation;
     public float maxseparation;
 
-
     private float shakeinterval = 0.7f;
     private bool shaketriggered = false;
 
@@ -23,11 +22,15 @@ public class CameraFollowTarget : MonoBehaviour
     public float minZoom = 2f;
     public float maxZoom = 4f;
 
+ 
+
     void Start()
     {
         var initPos = 0.5f * (playertransform1.position + playertransform2.position);
         camerafollowtarget.position = new Vector3(initPos.x, initPos.y + yOffset, initPos.z);
         ingamecamera = GameObject.Find("InGameCamera").GetComponent<CinemachineVirtualCamera>();
+      
+       
     }
 
     void UpdateCamera()
@@ -35,6 +38,8 @@ public class CameraFollowTarget : MonoBehaviour
         float newZoom = Mathf.Lerp(minZoom, maxZoom, playerseparation / zoomLimiter);
         ingamecamera.m_Lens.OrthographicSize = Mathf.Lerp(ingamecamera.m_Lens.OrthographicSize, newZoom, Time.deltaTime);
     }
+
+
 
     void UpdateCameraShake()
     {
@@ -46,6 +51,8 @@ public class CameraFollowTarget : MonoBehaviour
             if (playerseparation > maxseparation)
             {
                 EventManager.current.CameraShakeTriggered();
+                EventManager.current.DialogueTrigger(1);
+               
                 shaketriggered = true;
                 shakeinterval = 0.7f;
             }

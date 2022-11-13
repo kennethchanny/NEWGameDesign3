@@ -785,7 +785,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f8619357d9972f940a38f47d0639f03c, type: 3}
   audioClipArray2:
   - {fileID: 8300000, guid: f8619357d9972f940a38f47d0639f03c, type: 3}
-  audioClipArray3: []
+  audioClipArray3:
+  - {fileID: 8300000, guid: 380c6d1caadfd374791df55a648f311a, type: 3}
   audioClipArray4: []
 --- !u!114 &376793000
 MonoBehaviour:
