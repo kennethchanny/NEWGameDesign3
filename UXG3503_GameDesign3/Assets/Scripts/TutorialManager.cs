@@ -8,6 +8,11 @@ public class TutorialManager : MonoBehaviour
     public bool lever2ison = false;
     public bool lever3ison = false;
     private bool istutorialcomplete = false;
+
+    public GameObject lever1Audio;
+    public GameObject lever2Audio;
+    public GameObject lever3Audio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +50,7 @@ public class TutorialManager : MonoBehaviour
             else
             {
                 lever1ison = true;
-                
+                lever1Audio.SetActive(true);
             }
         }
 
@@ -59,6 +64,7 @@ public class TutorialManager : MonoBehaviour
             else
             {
                 lever2ison = true;
+                lever2Audio.SetActive(true);
 
             }
         }
@@ -72,6 +78,7 @@ public class TutorialManager : MonoBehaviour
             else
             {
                 lever3ison = true;
+                lever3Audio.SetActive(true);
 
             }
         }
