@@ -300,6 +300,7 @@ MonoBehaviour:
   cageref: {fileID: 3967874077402847584}
   maxX: 35
   minX: -20
+  cageparticles: {fileID: 4720017104007860040, guid: 519df7f72de034e4399a71c6a886049e, type: 3}
 --- !u!1 &3967874076423906249
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,9 +679,17 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2342424038609236055, guid: d0c948560c278694c85b39ad7dde263a, type: 3}
+      propertyPath: m_InstanceId
+      value: -194568
+      objectReference: {fileID: 0}
     - target: {fileID: 2342424039679136040, guid: d0c948560c278694c85b39ad7dde263a, type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342424039679136040, guid: d0c948560c278694c85b39ad7dde263a, type: 3}
+      propertyPath: m_InstanceId
+      value: -194570
       objectReference: {fileID: 0}
     - target: {fileID: 8774365395368125565, guid: d0c948560c278694c85b39ad7dde263a, type: 3}
       propertyPath: m_LocalPosition.x
