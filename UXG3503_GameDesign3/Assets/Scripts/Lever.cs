@@ -12,6 +12,7 @@ public class Lever : MonoBehaviour
     private GameObject player2;
     public float delayTime = 0.2f;
 
+    public GameObject leverparticles;
     public float leverDistance;
 
     IEnumerator DelayAudioCoroutine()
@@ -28,6 +29,7 @@ public class Lever : MonoBehaviour
             {
                 animref.SetTrigger("ToggleLever");
                 EventManager.current.LeverPulled(id);
+                Instantiate(leverparticles, transform.position, Quaternion.identity);
                 audioRef.playAudio();
                 StartCoroutine(DelayAudioCoroutine());
             }
@@ -40,6 +42,7 @@ public class Lever : MonoBehaviour
             {
                 animref.SetTrigger("ToggleLever");
                 EventManager.current.LeverPulled(id);
+                Instantiate(leverparticles, transform.position, Quaternion.identity);
                 audioRef.playAudio();
                 StartCoroutine(DelayAudioCoroutine());
 
