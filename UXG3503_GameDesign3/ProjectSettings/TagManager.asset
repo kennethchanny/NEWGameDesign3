@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Elevator
+  - music
   layers:
   - Default
   - TransparentFX
