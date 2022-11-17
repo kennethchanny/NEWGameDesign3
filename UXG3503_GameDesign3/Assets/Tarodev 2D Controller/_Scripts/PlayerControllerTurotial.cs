@@ -17,6 +17,7 @@ namespace TarodevController {
         public CameraFollowTarget cameraFollowScript;
         public float slugReduction = 0;
         public float maxslugValue;
+        private AudioScript audioref;
 
  
 
@@ -49,7 +50,8 @@ namespace TarodevController {
 
         private void Start()
         {
-            playerLock = false;
+            audioref = GetComponent<AudioScript>();
+               playerLock = false;
             EventManager.current.onGameOver += LockPlayer;
             EventManager.current.onLeverPulled += UnlockGate;
 
@@ -118,6 +120,7 @@ namespace TarodevController {
                 };
                 if (Input.JumpDown)
                 {
+                    audioref.playAudio();
                     _lastJumpPressed = Time.time;
                 }
             }
@@ -131,6 +134,7 @@ namespace TarodevController {
                 };
                 if (Input.JumpDown)
                 {
+                    audioref.playAudio();
                     _lastJumpPressed = Time.time;
                 }
             }

@@ -51,7 +51,7 @@ public class TutorialManager : MonoBehaviour
             else
             {
                 lever1ison = true;
-                lever1Audio.SetActive(true);
+              
             }
         }
 
@@ -65,7 +65,7 @@ public class TutorialManager : MonoBehaviour
             else
             {
                 lever2ison = true;
-                lever2Audio.SetActive(true);
+             
 
             }
         }
@@ -79,7 +79,7 @@ public class TutorialManager : MonoBehaviour
             else
             {
                 lever3ison = true;
-                lever3Audio.SetActive(true);
+               
 
             }
         }
