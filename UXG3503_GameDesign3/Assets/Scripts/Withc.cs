@@ -51,11 +51,18 @@ public class Withc : MonoBehaviour
             countDown = 0;
             istooLate = true;
             animRef.SetTrigger("Death");
+
+
         }
     }
 
+    public void WitchDeath()
+    {
+        EventManager.current.GameOverTriggered();
+    }
     public void ResetCountDown()
     {
+
         countDown = 150;
         animRef.SetTrigger("Rest");
     }
