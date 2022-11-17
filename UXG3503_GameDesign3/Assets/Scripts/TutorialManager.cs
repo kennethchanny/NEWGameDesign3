@@ -12,7 +12,6 @@ public class TutorialManager : MonoBehaviour
     public GameObject lever1Audio;
     public GameObject lever2Audio;
     public GameObject lever3Audio;
-    public GameObject curtainCLoseAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +34,7 @@ public class TutorialManager : MonoBehaviour
         {
             istutorialcomplete = true;
             EventManager.current.TutorialEndedTriggered();
-            curtainCLoseAudio.SetActive(true);
+           
         }
     }
 

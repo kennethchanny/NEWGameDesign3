@@ -32,6 +32,7 @@ public class Lever : MonoBehaviour
             {
                 animref.SetTrigger("ToggleLever");
                 EventManager.current.LeverPulled(id);
+                
             }
         }
 
