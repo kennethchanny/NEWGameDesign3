@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   delayTime: 0.2
+  leverparticles: {fileID: 4720017104007860040, guid: 519df7f72de034e4399a71c6a886049e, type: 3}
   leverDistance: 2
 --- !u!61 &3975104505449625265
 BoxCollider2D:
