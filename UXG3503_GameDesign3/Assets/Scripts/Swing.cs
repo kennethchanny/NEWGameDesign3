@@ -11,6 +11,7 @@ public class Swing : MonoBehaviour
     public GameObject player2ref;
     public GameObject cageref;
     public float maxX = 0;
+    public float minX = 0;
 
 
 
@@ -74,8 +75,9 @@ public class Swing : MonoBehaviour
     }
     public void MoveCage(int dir)
     {
-        
-            rightrope.Translate(moveSpeed * dir, 0, 0);
+        //play moving sound
+        rightrope.Translate(moveSpeed * dir, 0, 0);
+       
             leftrope.Translate(moveSpeed * dir, 0, 0);
         
         
@@ -86,7 +88,13 @@ public class Swing : MonoBehaviour
      
         if (cageref.transform.localPosition.x > maxX)
         {
-            
+           
+            moveSpeed = 0;
+        }
+
+        if (cageref.transform.localPosition.x < minX)
+        {
+            //add cage stop sound here
             moveSpeed = 0;
         }
     }
