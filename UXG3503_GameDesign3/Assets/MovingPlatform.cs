@@ -10,9 +10,13 @@ public class MovingPlatform : MonoBehaviour
     public Transform target1;
     public Transform target2;
     public Transform activetarget;
+
+    //AudioScript reference
+    private AudioScript audioRef;
+
     void Start()
     {
-        
+        audioRef = GetComponent<AudioScript>();
         EventManager.current.onLeverPulled += TogglePlatform;
     }
     private void OnDestroy()
@@ -25,16 +29,35 @@ public class MovingPlatform : MonoBehaviour
         {
             if (istarget1)
             {
+                audioRef.playAudio();
                 istarget1 = false;
                 activetarget.position = target2.position;
             }
             else
             {
+                audioRef.playAudio();
                 istarget1 = true;
                 activetarget.position = target1.position;
             }
         }
        
+    }
+
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.transform.SetParent(transform);
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.transform.SetParent(null);
+        }
     }
 
     void UpdateMovement(Vector3 point)
@@ -53,4 +76,5 @@ public class MovingPlatform : MonoBehaviour
     {
         UpdateMovement(activetarget.position);
     }
+
 }

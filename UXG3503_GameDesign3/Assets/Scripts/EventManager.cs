@@ -56,6 +56,16 @@ public class EventManager : MonoBehaviour
 
     }
 
+    public event Action<int> onDialogueTriggered;
+    public void DialogueTrigger(int id)
+    {
+        if (onDialogueTriggered != null)
+        {
+            onDialogueTriggered(id);
+        }
+
+    }
+
     public event Action<int> onLeverPulled;
     public void LeverPulled(int id)
     {
@@ -75,4 +85,6 @@ public class EventManager : MonoBehaviour
         }
 
     }
+
+    
 }

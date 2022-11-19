@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameOver : MonoBehaviour
 {
@@ -8,8 +9,13 @@ public class GameOver : MonoBehaviour
     private CameraFollowTarget cameraref;
     [SerializeField] private float deathdecaytimer = 0;
     public float maxdeathDecay = 2f;
+    private bool playSound;
+    private AudioScript audioref;
+    private AudioSource audiosourceref;
     void Start()
     {
+        audioref = GetComponent<AudioScript>();
+        audiosourceref = GetComponent<AudioSource>();
         cameraref = GameObject.Find("CinemachineStateDrivenCamera").GetComponent<CameraFollowTarget>();
         deathdecaytimer = 0;
         gameOver = false;
@@ -24,20 +30,32 @@ public class GameOver : MonoBehaviour
         //if game is over, dont continue
         if (gameOver == true) return;
 
+        if (deathdecaytimer > maxdeathDecay)
+        {
+            //die
+            audiosourceref.volume = 1;
+            audioref.playAudio2();
+            deathdecaytimer = 0;
+            gameOver = true;
+            EventManager.current.GameOverTriggered();
+
+        }
+
         //if more than boundary, start countdown
         if (cameraref.playerseparation > cameraref.maxseparation)
         {
             //increase timer
             deathdecaytimer += Time.deltaTime;
             //if cross timer, gg
-            if (deathdecaytimer > maxdeathDecay)
-            {
-                //die
-                deathdecaytimer = 0;
-                gameOver = true;
-                EventManager.current.GameOverTriggered();
-            }
+           
 
+            if (playSound == false)
+            {
+                audioref.playAudio();
+                playSound = true;
+                
+            }
+           
 
 
         }
@@ -45,12 +63,17 @@ public class GameOver : MonoBehaviour
         //while more than boundary, if become less,
         if (cameraref.playerseparation < cameraref.maxseparation)
         {
-            if (cameraref.playerseparation <= 0)
+            deathdecaytimer = 0;
+           
+            if (playSound == true)
             {
-                //heal up
-                deathdecaytimer -= Time.deltaTime * 3;
-                deathdecaytimer = 0;
+               
+                playSound = false;
+                audiosourceref.Stop();
+
             }
+        
+           
 
         }
     }

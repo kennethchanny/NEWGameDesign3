@@ -24,6 +24,8 @@ namespace TarodevController {
         private ParticleSystem.MinMaxGradient _currentGradient;
         private Vector2 _movement;
 
+        [SerializeField] private AudioScript _movementAudio;
+
         void Awake() => _player = GetComponentInParent<IPlayerController>();
 
         void Update() {
@@ -52,6 +54,7 @@ namespace TarodevController {
             // Jump effects
             if (_player.JumpingThisFrame) {
                 _anim.SetTrigger(JumpKey);
+                _movementAudio.playAudio();
                 _anim.ResetTrigger(GroundedKey);
 
                 // Only play particles when grounded (avoid coyote)

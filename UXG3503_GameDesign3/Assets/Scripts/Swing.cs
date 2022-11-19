@@ -11,8 +11,9 @@ public class Swing : MonoBehaviour
     public GameObject player2ref;
     public GameObject cageref;
     public float maxX = 0;
-
-
+    public float minX = 0;
+    public GameObject cageparticles;
+    public bool isMoving;
 
 
     public void TriggerLever(int id)
@@ -26,17 +27,29 @@ public class Swing : MonoBehaviour
 
                         case 0:
                             {
+                                //play moving sound
+                                Instantiate(cageparticles, rightrope.position, Quaternion.identity);
+                                Instantiate(cageparticles, leftrope.position, Quaternion.identity);
                                 leverDirection = 1;
+                                isMoving = true;
                             }
                             break;
                         case 1:
                             {
+                                //play moving sound
+                                Instantiate(cageparticles, rightrope.position, Quaternion.identity);
+                                Instantiate(cageparticles, leftrope.position, Quaternion.identity);
                                 leverDirection = -1;
+                                isMoving = true;
                             }
                             break;
                         case -1:
                             {
+                                //play moving sound
+                                Instantiate(cageparticles, rightrope.position, Quaternion.identity);
+                                Instantiate(cageparticles, leftrope.position, Quaternion.identity);
                                 leverDirection = 1;
+                                isMoving = true;
                             }
                             break;
 
@@ -49,6 +62,9 @@ public class Swing : MonoBehaviour
                 {
                     if(player2ref.transform.parent != null)
                     {
+                        //play cage release sound
+                        Instantiate(cageparticles, rightrope.position, Quaternion.identity);
+                        Instantiate(cageparticles, leftrope.position, Quaternion.identity);
                         cageref.GetComponent<BoxCollider2D>().enabled = false;
                         player2ref.transform.parent = null;
                         leverDirection = 0;
@@ -74,20 +90,36 @@ public class Swing : MonoBehaviour
     }
     public void MoveCage(int dir)
     {
-        
+        if(isMoving)
+        {
             rightrope.Translate(moveSpeed * dir, 0, 0);
+
             leftrope.Translate(moveSpeed * dir, 0, 0);
+        }
+        
         
         
     }
     // Update is called once per frame
     void Update()
     {
-     
+       
         if (cageref.transform.localPosition.x > maxX)
+        { //add cage stop sound here
+            cageref.transform.localPosition = new Vector3(maxX, cageref.transform.localPosition.y, cageref.transform.localPosition.z);
+            Instantiate(cageparticles, rightrope.position, Quaternion.identity);
+            Instantiate(cageparticles, leftrope.position, Quaternion.identity);
+            isMoving = false;
+        }
+
+        if (cageref.transform.localPosition.x < minX)
         {
-            
-            moveSpeed = 0;
+            cageref.transform.localPosition = new Vector3(minX, cageref.transform.localPosition.y, cageref.transform.localPosition.z);
+            //add cage stop sound here
+            Instantiate(cageparticles, rightrope.position, Quaternion.identity);
+            Instantiate(cageparticles, leftrope.position, Quaternion.identity);
+            EventManager.current.LeverPulled(2);
+
         }
     }
     private void FixedUpdate()

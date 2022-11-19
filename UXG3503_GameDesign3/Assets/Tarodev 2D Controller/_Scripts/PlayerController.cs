@@ -17,7 +17,10 @@ namespace TarodevController {
         public CameraFollowTarget cameraFollowScript;
         public float slugReduction = 0;
         public float maxslugValue;
+        private AudioScript audioref;
 
+        //public GameObject hansel;
+        public Rigidbody2D hans;
 
         // Public for external hooks
         public Vector3 GetVelocity()
@@ -48,10 +51,12 @@ namespace TarodevController {
 
         private void Start()
         {
+            audioref = GetComponent<AudioScript>();
             playerLock = false;
             EventManager.current.onGameOver += LockPlayer;
             EventManager.current.onLeverPulled += UnlockGate;
-            
+            hans = GetComponent<Rigidbody2D>();
+            hans.bodyType = RigidbodyType2D.Kinematic;
         }
 
         private void OnDestroy()
@@ -66,6 +71,11 @@ namespace TarodevController {
             {
                 inCage = false;
                 transform.rotation = Quaternion.identity;
+            }
+
+            if (inCage == false)
+            {
+                hans.bodyType = RigidbodyType2D.Dynamic;
             }
         }
 
@@ -112,6 +122,7 @@ namespace TarodevController {
                 };
                 if (Input.JumpDown)
                 {
+                    audioref.playAudio();
                     _lastJumpPressed = Time.time;
                 }
             }
@@ -125,6 +136,7 @@ namespace TarodevController {
                 };
                 if (Input.JumpDown)
                 {
+                    audioref.playAudio();
                     _lastJumpPressed = Time.time;
                 }
             }
@@ -374,4 +386,6 @@ namespace TarodevController {
 
         #endregion
     }
+
+   
 }
