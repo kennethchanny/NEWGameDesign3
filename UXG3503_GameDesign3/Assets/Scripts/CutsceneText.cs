@@ -5,53 +5,19 @@ using TMPro;
 
 public class CutsceneText : MonoBehaviour
 {
-    //public TextMeshProUGUI storyText;
-    //public string[] sentence;
-    //private int index;
-    //public float textSpeed;
 
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-
-    //}
-
-    //IEnumerator StoryCaption()
-    //{
-    //    foreach (char character in sentence[index].ToCharArray())
-    //    {
-    //        storyText.text += character;
-    //        yield return new WaitForSeconds(textSpeed);
-    //    }
-    //    nextSentence();
-    //}
-
-    //public void nextSentence()
-    //{
-    //    if (index < sentence.Length - 1)
-    //    {
-    //        index++;
-    //        storyText.text = "";
-    //        StartCoroutine(StoryCaption());
-    //    }
-
-    //    else storyText.text = "";
-    //}
-
-    //public void StartStoryNarration()
-    //{
-    //    StartCoroutine(StoryCaption());
-    //}
 
     public TextMeshProUGUI[] storyText;
     public string[] sentence;
     public float textSpeed;
+    public TypewriterAudio typewriterSFX;
 
     IEnumerator StoryCaption(int currentTextIndex)
     {
         foreach (char character in sentence[currentTextIndex].ToCharArray())
         {
             storyText[currentTextIndex].text += character;
+            typewriterSFX.PlayOneShot(0);
             yield return new WaitForSeconds(textSpeed);
         }
 
@@ -88,3 +54,42 @@ public class CutsceneText : MonoBehaviour
         StartCoroutine(StoryCaption(currentTextIndex));
     }
 }
+
+
+//public TextMeshProUGUI storyText;
+//public string[] sentence;
+//private int index;
+//public float textSpeed;
+
+//// Start is called before the first frame update
+//void Start()
+//{
+
+//}
+
+//IEnumerator StoryCaption()
+//{
+//    foreach (char character in sentence[index].ToCharArray())
+//    {
+//        storyText.text += character;
+//        yield return new WaitForSeconds(textSpeed);
+//    }
+//    nextSentence();
+//}
+
+//public void nextSentence()
+//{
+//    if (index < sentence.Length - 1)
+//    {
+//        index++;
+//        storyText.text = "";
+//        StartCoroutine(StoryCaption());
+//    }
+
+//    else storyText.text = "";
+//}
+
+//public void StartStoryNarration()
+//{
+//    StartCoroutine(StoryCaption());
+//}
