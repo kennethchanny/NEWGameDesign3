@@ -4244,7 +4244,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 6.983333
+  - time: 8.716666
     functionName: RestartGame
     data: 
     objectReferenceParameter: {fileID: 0}

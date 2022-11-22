@@ -123,6 +123,16 @@ namespace TarodevController {
                     audioref.playAudio();
                     _lastJumpPressed = Time.time;
                 }
+
+                if(UnityEngine.Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    audioref.playAudio2();
+                }
+                if (UnityEngine.Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    audioref.playAudio2();
+                }
+
             }
             else if (playernumber == 2)
             {
@@ -136,6 +146,14 @@ namespace TarodevController {
                 {
                     audioref.playAudio();
                     _lastJumpPressed = Time.time;
+                }
+                if (UnityEngine.Input.GetKeyDown(KeyCode.D))
+                {
+                    audioref.playAudio2();
+                }
+                if (UnityEngine.Input.GetKeyDown(KeyCode.A))
+                {
+                    audioref.playAudio2();
                 }
             }
            

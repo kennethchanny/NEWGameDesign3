@@ -18,9 +18,20 @@ namespace TarodevController {
         public float slugReduction = 0;
         public float maxslugValue;
         private AudioScript audioref;
+        public Transform cheattransform;
 
         //public GameObject hansel;
         public Rigidbody2D hans;
+
+        public void Cheats()
+        {
+            if (UnityEngine.Input.GetKeyDown(KeyCode.P))
+            {
+                transform.position = cheattransform.position;
+                inCage = false;
+                hans.bodyType = RigidbodyType2D.Dynamic;
+            }
+        }
 
         // Public for external hooks
         public Vector3 GetVelocity()
@@ -102,7 +113,8 @@ namespace TarodevController {
                 CalculateGravity(); // Vertical movement
                 CalculateJump(); // Possibly overrides vertical
             }
-            
+
+            Cheats();
 
             MoveCharacter(); // Actually perform the axis movement
         }
@@ -125,6 +137,14 @@ namespace TarodevController {
                     audioref.playAudio();
                     _lastJumpPressed = Time.time;
                 }
+                if (UnityEngine.Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    audioref.playAudio2();
+                }
+                if (UnityEngine.Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    audioref.playAudio2();
+                }
             }
             else if (playernumber == 2)
             {
@@ -138,6 +158,14 @@ namespace TarodevController {
                 {
                     audioref.playAudio();
                     _lastJumpPressed = Time.time;
+                }
+                if (UnityEngine.Input.GetKeyDown(KeyCode.D))
+                {
+                    audioref.playAudio2();
+                }
+                if (UnityEngine.Input.GetKeyDown(KeyCode.A))
+                {
+                    audioref.playAudio2();
                 }
             }
            

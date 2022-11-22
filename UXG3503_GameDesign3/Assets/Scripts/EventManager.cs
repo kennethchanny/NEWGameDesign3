@@ -86,5 +86,23 @@ public class EventManager : MonoBehaviour
 
     }
 
-    
+    public event Action onResetWitchTimer;
+
+    public void ResetWitchTimer()
+    {
+        if (onResetWitchTimer != null)
+        {
+            onResetWitchTimer();
+        }
+    }
+
+    public event Action<int> onCompletedGame;
+
+    public void CompletedGame(int id)
+    {
+        if (onCompletedGame != null)
+        {
+            onCompletedGame(id);
+        }
+    }
 }

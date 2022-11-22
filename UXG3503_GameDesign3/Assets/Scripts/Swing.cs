@@ -14,6 +14,8 @@ public class Swing : MonoBehaviour
     public float minX = 0;
     public GameObject cageparticles;
     public bool isMoving;
+    private AudioScript audioref;
+    private bool sound;
 
 
     public void TriggerLever(int id)
@@ -81,6 +83,7 @@ public class Swing : MonoBehaviour
 
     private void Start()
     {
+        audioref = GetComponent<AudioScript>();
         EventManager.current.onLeverPulled += TriggerLever;
     }
 
@@ -106,18 +109,28 @@ public class Swing : MonoBehaviour
        
         if (cageref.transform.localPosition.x > maxX)
         { //add cage stop sound here
+            if(sound == false)
+            {
+                audioref.playAudio();
+                sound = true;
+            }
+           
             cageref.transform.localPosition = new Vector3(maxX, cageref.transform.localPosition.y, cageref.transform.localPosition.z);
-            Instantiate(cageparticles, rightrope.position, Quaternion.identity);
-            Instantiate(cageparticles, leftrope.position, Quaternion.identity);
             isMoving = false;
+
+
+
         }
 
         if (cageref.transform.localPosition.x < minX)
         {
             cageref.transform.localPosition = new Vector3(minX, cageref.transform.localPosition.y, cageref.transform.localPosition.z);
             //add cage stop sound here
-            Instantiate(cageparticles, rightrope.position, Quaternion.identity);
-            Instantiate(cageparticles, leftrope.position, Quaternion.identity);
+            if (sound == false)
+            {
+                audioref.playAudio();
+                sound = true;
+            }
             EventManager.current.LeverPulled(2);
 
         }
